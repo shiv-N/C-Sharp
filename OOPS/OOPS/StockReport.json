@@ -1,0 +1,34 @@
+﻿{
+  "Stocks": [
+    {
+      "Symbol": "RELIANCE",
+      "Volume":295528,
+      "Price":1461
+    },											
+    {
+      "Symbol": "TCS",
+      "Volume":245622,
+      "Price":2103
+    },
+    {
+      "Symbol": "HDFCBANK",
+      "Volume":225427,
+      "Price":1262
+    },
+    {
+      "Symbol": "ICICIBANK",
+      "Volume":194527,
+      "Price":491
+    },
+    {
+      "Symbol": "INFOSYS",
+      "Volume":123227,
+      "Price":1491
+    },
+    {
+      "Symbol": "TATA",
+      "Volume":164823,
+      "Price":1991
+    }
+  ]
+}
