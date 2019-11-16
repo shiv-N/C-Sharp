@@ -13,13 +13,21 @@ namespace DesignPattern
             switch (optionsOne)
             {
                 case 1:
-                    Singleton();
+                         Singleton();
                     break;
                 case 2:
-                    Factory();
+                        Factory();
                     break;
                 case 3:
-                    Prototype();
+                         Prototype();
+                    break;
+                case 4:
+                    Test.AdapterPatternTest adapterPattern = new Test.AdapterPatternTest();
+                    adapterPattern.Adapter_Pattern();
+                    break;
+                case 5:
+                    ProxyPattern proxy = new ProxyPattern();
+                    proxy.Pattern();
                     break;
             }
             
