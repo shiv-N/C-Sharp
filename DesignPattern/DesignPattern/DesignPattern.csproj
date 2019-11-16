@@ -47,6 +47,8 @@
     <Compile Include="FactoryPattern\Computers.cs" />
     <Compile Include="FactoryPattern\PC.cs" />
     <Compile Include="FactoryPattern\Servers.cs" />
+    <Compile Include="PrototypePattern\Employees.cs" />
+    <Compile Include="PrototypePattern\Prototype_Pattern.cs" />
     <Compile Include="Singleton\Eager_Initialize.cs" />
     <Compile Include="Singleton\Static_Initialization.cs" />
     <Compile Include="Program.cs" />
@@ -57,8 +59,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PrototypePattern\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

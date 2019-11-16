@@ -1,15 +1,57 @@
 ﻿using System;
 using System.Threading.Tasks;
 
+
 namespace DesignPattern
 {
     class Program
     { 
         static void Main(string[] args)
         {
+            Console.WriteLine("\n1. Singleton Design Pattern\n2. Factory Design Pattern\n3. Prototype Design Pattern\nEnter your options:");
+            int optionsOne = Convert.ToInt32(Console.ReadLine());
+            switch (optionsOne)
+            {
+                case 1:
+                    Singleton();
+                    break;
+                case 2:
+                    Factory();
+                    break;
+                case 3:
+                    Prototype();
+                    break;
+            }
+            
+            Console.ReadKey();
+        }
 
-            Console.WriteLine("-------------------Singleton------------------ \n1.Singleton Structure \n2.Thread Safe Singleton \n3.Eager Initialization" +
-                "\n4.Lazy Initialization\nEnter your options:");
+        private static void Prototype()
+        {
+            PrototypePattern.Prototype_Pattern prototype = new PrototypePattern.Prototype_Pattern();
+            prototype.Pattern();
+        }
+
+        private static void Factory()
+        {
+            Console.WriteLine("1.PC \n2Servers \nEnter your options:");
+            int optionOne = Convert.ToInt32(Console.ReadLine());
+            switch (optionOne)
+            {
+                case 1:
+                    FactoryPattern.ComputerFactory.Computer_Factory("PC");
+                    break;
+                case 2:
+                    FactoryPattern.ComputerFactory.Computer_Factory("Servers");
+                    break;
+            }
+        }
+
+        private static void Singleton()
+        {
+            Console.WriteLine("-------------------Singleton------------------" +
+                "\n1.Singleton Structure \n2.Thread Safe Singleton \n3.Eager Initialization" +
+                    "\n4.Lazy Initialization\nEnter your options:");
             int options = Convert.ToInt32(Console.ReadLine());
 
             switch (options)
@@ -20,7 +62,7 @@ namespace DesignPattern
 
                 case 2:
                     Parallel.Invoke(
-                        () => ThreadOne(),()=> ThreadTwo());
+                        () => ThreadOne(), () => ThreadTwo());
                     break;
                 case 3:
                     EagerInitialization();
@@ -28,23 +70,9 @@ namespace DesignPattern
                 case 4:
                     LazyInitialization();
                     break;
-                case 5:
-                    Console.WriteLine("1.PC \n2Servers \nEnter your options:");
-                    int optionOne = Convert.ToInt32(Console.ReadLine());
-                    switch (optionOne)
-                    {
-                        case 1:
-                            FactoryPattern.ComputerFactory.Computer_Factory("PC");
-                            break;
-                        case 2:
-                            FactoryPattern.ComputerFactory.Computer_Factory("Servers");
-                            break;
-                    }
-                    break;
             }
-            Console.ReadKey();
         }
-        
+
         /*--------------------------------------------------------- Static Methods ----------------------------------------------------------------------------------*/
         private static void LazyInitialization()
         {
