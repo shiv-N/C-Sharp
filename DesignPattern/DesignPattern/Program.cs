@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-
+using DesignPattern.BehavioralPattern.Observer_Pattern;
 
 namespace DesignPattern
 {
@@ -28,6 +28,10 @@ namespace DesignPattern
                 case 5:
                     ProxyPattern proxy = new ProxyPattern();
                     proxy.Pattern();
+                    break;
+                case 6:
+                    ObserverPattern observer = new ObserverPattern();
+                    observer.Pattern();
                     break;
             }
             

@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BehavioralPattern\Observer_Pattern\ConcreateObserverA.cs" />
+    <Compile Include="BehavioralPattern\Observer_Pattern\ConcreateObserverB.cs" />
+    <Compile Include="BehavioralPattern\Observer_Pattern\ObserverPattern.cs" />
+    <Compile Include="BehavioralPattern\Observer_Pattern\Subject.cs" />
+    <Compile Include="BehavioralPattern\Observer_Pattern\Observer.cs" />
+    <Compile Include="BehavioralPattern\Observer_Pattern\ISubject.cs" />
     <Compile Include="StructuralPattern\Adapter_Design_Pattern\AdapterPattern\Socket.cs" />
     <Compile Include="StructuralPattern\Adapter_Design_Pattern\AdapterPattern\SocketAdapter.cs" />
     <Compile Include="StructuralPattern\Adapter_Design_Pattern\AdapterPattern\SocketClassAdapterImpl.cs" />
