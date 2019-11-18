@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPattern.FactoryPattern
+namespace DesignPattern.Dependency_Injection
 {
-    interface IComputers
+    public interface ICustomerDataAccess
     {
-        string Model_Name(string name);
+        string GetCustomerData(int id);
     }
 }

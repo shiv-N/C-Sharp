@@ -1,13 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="Prototype_Pattern.cs" company="Bridgelabz">
+//    Copyright © 2019 Company
+// </copyright>
+// <creator name="Saurabh Navdkar"/>
+// ----------------------------------------------------------------------
 namespace DesignPattern.PrototypePattern
 {
-    class Prototype_Pattern
+    using System;
+
+    /// <summary>
+    /// this is Prototype Pattern class
+    /// </summary>
+    public class Prototype_Pattern
     {
+        /// <summary>
+        /// Patterns this instance.
+        /// </summary>
         public void Pattern()
         {
             Employees employees = new Employees
@@ -27,6 +35,5 @@ namespace DesignPattern.PrototypePattern
             Console.WriteLine("\nDetails of Employee Deep Copy list:");
             employees.DisplayObj(employeeCopyTwo);
         }
-       
     }
 }

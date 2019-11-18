@@ -1,13 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="ComputerFactory.cs" company="Bridgelabz">
+//    Copyright © 2019 Company
+// </copyright>
+// <creator name="Saurabh Navdkar"/>
+// ----------------------------------------------------------------------
 namespace DesignPattern.FactoryPattern
 {
+    using System;
+
+    /// <summary>
+    /// this is ComputerFactory class.
+    /// </summary>
     class ComputerFactory
     {
+        /// <summary>
+        /// Computers the factory.
+        /// </summary>
+        /// <param name="type">The type.</param>
         public static void Computer_Factory(string type)
         {
             if (type.Equals("PC"))
