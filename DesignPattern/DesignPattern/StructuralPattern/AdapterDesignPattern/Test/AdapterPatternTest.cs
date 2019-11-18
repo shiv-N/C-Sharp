@@ -1,14 +1,22 @@
-﻿using DesignPattern.Adapter_Design_Pattern;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="AdapterPatternTest.cs" company="Bridgelabz">
+//    Copyright © 2019 Company
+// </copyright>
+// <creator name="Saurabh Navdkar"/>
+// ----------------------------------------------------------------------
 namespace DesignPattern.Test
 {
-    class AdapterPatternTest
+    using DesignPattern.Adapter_Design_Pattern;
+    using System;
+
+    /// <summary>
+    /// this is class AdapterPatternTest
+    /// </summary>
+    public class AdapterPatternTest
     {
+        /// <summary>
+        /// Adapters the pattern.
+        /// </summary>
         public void Adapter_Pattern()
         {
             TestSocketObject();
@@ -16,6 +24,9 @@ namespace DesignPattern.Test
             TestSocketClass();
         }
 
+        /// <summary>
+        /// Tests the socket object.
+        /// </summary>
         private static void TestSocketObject()
         {
             ISocketAdapter socketAdapter = new SocketObjectImpl();
@@ -26,6 +37,10 @@ namespace DesignPattern.Test
             Console.WriteLine("V12 using obj Adapter = " + v12.Getvolts());
             Console.WriteLine("V120 using obj Adapter = " + v120.Getvolts());
         }
+
+        /// <summary>
+        /// Tests the socket class.
+        /// </summary>
         private static void TestSocketClass()
         {
             ISocketAdapter socketAdapter = new SocketClassAdapterImpl();

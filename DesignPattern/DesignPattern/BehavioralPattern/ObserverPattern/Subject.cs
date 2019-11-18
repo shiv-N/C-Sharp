@@ -1,4 +1,10 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="Subject.cs" company="Bridgelabz">
+//    Copyright © 2019 Company
+// </copyright>
+// <creator name="Saurabh Navdkar"/>
+// -----------------------------------------------------------------------
+using System;
 using DesignPattern.BehavioralPattern.Observer_Pattern;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +15,11 @@ using System.Threading;
 namespace DesignPattern.BehavioralPattern.Observer_Pattern
 {
     // subject owns some important state and notifies observers when
-    // the state changes
+    // the state changes    
+    /// <summary>
+    /// this is class Subject
+    /// </summary>
+    /// <seealso cref="DesignPattern.BehavioralPattern.Observer_Pattern.ISubject" />
     public class Subject : ISubject
     {
         // for the sake of simplicity, the subject's state, essential to all

@@ -1,4 +1,10 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="ISubject.cs" company="Bridgelabz">
+//    Copyright © 2019 Company
+// </copyright>
+// <creator name="Saurabh Navdkar"/>
+// -----------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +12,9 @@ using System.Threading.Tasks;
 
 namespace DesignPattern.BehavioralPattern.Observer_Pattern
 {
+    /// <summary>
+    /// this is interface ISubject
+    /// </summary>
     public interface ISubject
     {
         /// <summary>
