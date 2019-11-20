@@ -8,7 +8,7 @@ namespace Stack
 {
     class PrimeNumbers
     {
-        public void checkPrime()
+        public void CheckPrime()
         {
             int[] prime = new int[200];
             prime[0] = 2;

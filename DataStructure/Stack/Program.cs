@@ -31,7 +31,7 @@ namespace Stack
 
                 case 2:
                     PrimeNumbers numbers = new PrimeNumbers();
-                    numbers.checkPrime();
+                    numbers.CheckPrime();
                     break;
 
                 default: Console.WriteLine("Invalid Input!!!");
