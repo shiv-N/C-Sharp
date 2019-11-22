@@ -5,11 +5,12 @@ using System.Text;
 
 namespace BusinessLibrary.Interface
 {
-    interface IEmployeeBL
+   public interface IEmployeeBL
     {
-        void Register(ModelCL model);
-        void GetEmployee();
-        void InsertEmployee();
-        void updateEmployee();
+        string Register(ModelCL model);
+        public IEnumerable<ModelCL> GetAllEmployee();
+        //void GetEmployee();
+        public string DeleteEmployee(int Id);
+        public string UpdateEmployee(ModelCL model);
     }
 }

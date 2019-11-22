@@ -1,31 +1,59 @@
 ﻿using BusinessLibrary.Interface;
 using CommonLibrary;
+using RepositoryLibrary;
+using RepositoryLibrary.Interface;
 using System;
+using System.Collections.Generic;
 
 namespace BusinessLibrary
 {
     public class EmployeeBL : IEmployeeBL
     {
-        private ModelCL _register;
-
-        public void GetEmployee()
+        IEmployeeRL employeeRL;
+        public EmployeeBL(IEmployeeRL employeeRL)
         {
-            throw new NotImplementedException();
+            this.employeeRL = employeeRL;
         }
 
-        public void InsertEmployee()
+        public string DeleteEmployee(int Id)
         {
-            
+            if (Id != 0)
+            {
+                return this.employeeRL.DeleteEmployee(Id);
+            }
+            else
+            {
+                return "entry 0 is not valid";
+            }
         }
 
-        public void Register(ModelCL model)
+        public IEnumerable<ModelCL> GetAllEmployee()
         {
-            _register = model;
+            return employeeRL.GetAllEmployee();
         }
 
-        public void updateEmployee()
+        public string Register(ModelCL model)
         {
-            throw new NotImplementedException();
+            if(model != null)
+            {
+                return employeeRL.Register(model);
+            }
+            else
+            {
+                return "Record is empty";
+            }
+        }
+
+        public string UpdateEmployee(ModelCL model)
+        {
+            if (model != null)
+            {
+                return employeeRL.UpdateEmployee(model);
+            }
+            else
+            {
+                return "Record is empty";
+            }
         }
     }
 }

@@ -3,3 +3,9 @@ C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\RepositoryLibrary\b
 C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\RepositoryLibrary\obj\Debug\netcoreapp3.0\RepositoryLibrary.csprojAssemblyReference.cache
 C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\RepositoryLibrary\obj\Debug\netcoreapp3.0\RepositoryLibrary.AssemblyInfoInputs.cache
 C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\RepositoryLibrary\obj\Debug\netcoreapp3.0\RepositoryLibrary.AssemblyInfo.cs
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\RepositoryLibrary\bin\Debug\netcoreapp3.0\RepositoryLibrary.pdb
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\RepositoryLibrary\bin\Debug\netcoreapp3.0\CommonLibrary.dll
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\RepositoryLibrary\bin\Debug\netcoreapp3.0\CommonLibrary.pdb
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\RepositoryLibrary\obj\Debug\netcoreapp3.0\RepositoryLibrary.csproj.CopyComplete
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\RepositoryLibrary\obj\Debug\netcoreapp3.0\RepositoryLibrary.dll
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\RepositoryLibrary\obj\Debug\netcoreapp3.0\RepositoryLibrary.pdb

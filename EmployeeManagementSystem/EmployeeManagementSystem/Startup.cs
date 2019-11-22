@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BusinessLibrary;
+using BusinessLibrary.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,6 +12,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using RepositoryLibrary;
+using RepositoryLibrary.Interface;
 
 namespace EmployeeManagementSystem
 {
@@ -26,6 +30,8 @@ namespace EmployeeManagementSystem
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddTransient<IEmployeeBL, EmployeeBL>();
+            services.AddTransient<IEmployeeRL, EmployeeRL>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

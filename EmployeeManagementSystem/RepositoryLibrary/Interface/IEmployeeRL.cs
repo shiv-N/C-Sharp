@@ -5,11 +5,12 @@ using System.Text;
 
 namespace RepositoryLibrary.Interface
 {
-    interface IEmployeeRL
+    public interface IEmployeeRL
     {
-        void Register(ModelCL model);
-        void GetEmployee();
-        void InsertEmployee();
-        void updateEmployee();
+        string Register(ModelCL model);
+        IEnumerable<ModelCL> GetAllEmployee();
+        public string DeleteEmployee(int Id);
+
+        public string UpdateEmployee(ModelCL model);
     }
 }

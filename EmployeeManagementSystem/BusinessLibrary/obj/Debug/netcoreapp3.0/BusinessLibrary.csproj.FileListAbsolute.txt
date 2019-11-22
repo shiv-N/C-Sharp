@@ -1,0 +1,13 @@
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\BusinessLibrary\bin\Debug\netcoreapp3.0\BusinessLibrary.deps.json
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\BusinessLibrary\bin\Debug\netcoreapp3.0\BusinessLibrary.dll
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\BusinessLibrary\bin\Debug\netcoreapp3.0\BusinessLibrary.pdb
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\BusinessLibrary\bin\Debug\netcoreapp3.0\CommonLibrary.dll
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\BusinessLibrary\bin\Debug\netcoreapp3.0\RepositoryLibrary.dll
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\BusinessLibrary\bin\Debug\netcoreapp3.0\RepositoryLibrary.pdb
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\BusinessLibrary\bin\Debug\netcoreapp3.0\CommonLibrary.pdb
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\BusinessLibrary\obj\Debug\netcoreapp3.0\BusinessLibrary.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\BusinessLibrary\obj\Debug\netcoreapp3.0\BusinessLibrary.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\BusinessLibrary\obj\Debug\netcoreapp3.0\BusinessLibrary.AssemblyInfo.cs
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\BusinessLibrary\obj\Debug\netcoreapp3.0\BusinessLibrary.csproj.CopyComplete
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\BusinessLibrary\obj\Debug\netcoreapp3.0\BusinessLibrary.dll
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\BusinessLibrary\obj\Debug\netcoreapp3.0\BusinessLibrary.pdb

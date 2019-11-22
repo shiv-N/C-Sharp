@@ -61,5 +61,7 @@
   <ItemGroup>
     <Build Include="StoredProcedure\spGetEmployee.sql" />
     <Build Include="StoredProcedure\spInsertEmployee.sql" />
+    <Build Include="StoredProcedure\spUpdateEmployeeById.sql" />
+    <Build Include="StoredProcedure\spDeleteEmployee.sql" />
   </ItemGroup>
 </Project>
