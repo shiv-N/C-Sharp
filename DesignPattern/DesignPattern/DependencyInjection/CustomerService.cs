@@ -14,7 +14,7 @@ namespace DesignPattern.Dependency_Injection
         /// <summary>
         /// The business logic
         /// </summary>
-        CustomerBusinessLogic BusinessLogic;
+        private CustomerBusinessLogic BusinessLogic;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomerService"/> class.

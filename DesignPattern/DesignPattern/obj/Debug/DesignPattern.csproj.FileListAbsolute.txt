@@ -1,0 +1,6 @@
+C:\Users\Admin\source\repos\Saurabh\DesignPattern\DesignPattern\bin\Debug\DesignPattern.exe.config
+C:\Users\Admin\source\repos\Saurabh\DesignPattern\DesignPattern\bin\Debug\DesignPattern.exe
+C:\Users\Admin\source\repos\Saurabh\DesignPattern\DesignPattern\bin\Debug\DesignPattern.pdb
+C:\Users\Admin\source\repos\Saurabh\DesignPattern\DesignPattern\obj\Debug\DesignPattern.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Saurabh\DesignPattern\DesignPattern\obj\Debug\DesignPattern.exe
+C:\Users\Admin\source\repos\Saurabh\DesignPattern\DesignPattern\obj\Debug\DesignPattern.pdb

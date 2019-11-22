@@ -14,7 +14,7 @@ namespace DesignPattern.Dependency_Injection
         /// <summary>
         /// The data access
         /// </summary>
-        ICustomerDataAccess dataAccess;
+        private ICustomerDataAccess dataAccess;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomerBusinessLogic"/> class.

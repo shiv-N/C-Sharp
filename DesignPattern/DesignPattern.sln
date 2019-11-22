@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.757
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPattern", "DesignPattern\DesignPattern.csproj", "{D5EFEA63-5211-4DE9-AC0F-6F6E29229667}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Di", "Di\Di.csproj", "{87E946C5-76DF-43F8-BE9F-5C6922B81156}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D5EFEA63-5211-4DE9-AC0F-6F6E29229667}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5EFEA63-5211-4DE9-AC0F-6F6E29229667}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5EFEA63-5211-4DE9-AC0F-6F6E29229667}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87E946C5-76DF-43F8-BE9F-5C6922B81156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87E946C5-76DF-43F8-BE9F-5C6922B81156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87E946C5-76DF-43F8-BE9F-5C6922B81156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87E946C5-76DF-43F8-BE9F-5C6922B81156}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

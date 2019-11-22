@@ -1,0 +1,7 @@
+C:\Users\Admin\source\repos\Saurabh\DataStructure\Stack\bin\Debug\Stack.exe.config
+C:\Users\Admin\source\repos\Saurabh\DataStructure\Stack\bin\Debug\Stack.exe
+C:\Users\Admin\source\repos\Saurabh\DataStructure\Stack\bin\Debug\Stack.pdb
+C:\Users\Admin\source\repos\Saurabh\DataStructure\Stack\obj\Debug\Stack.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Saurabh\DataStructure\Stack\obj\Debug\Stack.exe
+C:\Users\Admin\source\repos\Saurabh\DataStructure\Stack\obj\Debug\Stack.pdb
+C:\Users\Admin\source\repos\Saurabh\DataStructure\Stack\obj\Debug\Stack.csprojAssemblyReference.cache

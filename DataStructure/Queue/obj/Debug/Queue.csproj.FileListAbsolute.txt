@@ -1,0 +1,7 @@
+C:\Users\Admin\source\repos\Saurabh\DataStructure\Queue\bin\Debug\Queue.exe.config
+C:\Users\Admin\source\repos\Saurabh\DataStructure\Queue\bin\Debug\Queue.exe
+C:\Users\Admin\source\repos\Saurabh\DataStructure\Queue\bin\Debug\Queue.pdb
+C:\Users\Admin\source\repos\Saurabh\DataStructure\Queue\obj\Debug\Queue.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Saurabh\DataStructure\Queue\obj\Debug\Queue.exe
+C:\Users\Admin\source\repos\Saurabh\DataStructure\Queue\obj\Debug\Queue.pdb
+C:\Users\Admin\source\repos\Saurabh\DataStructure\Queue\obj\Debug\Queue.csprojAssemblyReference.cache

@@ -1,0 +1,8 @@
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\CommonLibrary\bin\Debug\netcoreapp3.0\CommonLibrary.deps.json
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\CommonLibrary\bin\Debug\netcoreapp3.0\CommonLibrary.dll
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\CommonLibrary\bin\Debug\netcoreapp3.0\CommonLibrary.pdb
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\CommonLibrary\obj\Debug\netcoreapp3.0\CommonLibrary.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\CommonLibrary\obj\Debug\netcoreapp3.0\CommonLibrary.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\CommonLibrary\obj\Debug\netcoreapp3.0\CommonLibrary.AssemblyInfo.cs
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\CommonLibrary\obj\Debug\netcoreapp3.0\CommonLibrary.dll
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\CommonLibrary\obj\Debug\netcoreapp3.0\CommonLibrary.pdb

@@ -1,0 +1,5 @@
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\RepositoryLibrary\bin\Debug\netcoreapp3.0\RepositoryLibrary.deps.json
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\RepositoryLibrary\bin\Debug\netcoreapp3.0\RepositoryLibrary.dll
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\RepositoryLibrary\obj\Debug\netcoreapp3.0\RepositoryLibrary.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\RepositoryLibrary\obj\Debug\netcoreapp3.0\RepositoryLibrary.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\Saurabh\EmployeeManagementSystem\RepositoryLibrary\obj\Debug\netcoreapp3.0\RepositoryLibrary.AssemblyInfo.cs

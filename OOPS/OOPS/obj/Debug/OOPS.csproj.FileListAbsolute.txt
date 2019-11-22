@@ -1,0 +1,10 @@
+C:\Users\Admin\source\repos\Saurabh\OOPS\OOPS\bin\Debug\OOPS.exe.config
+C:\Users\Admin\source\repos\Saurabh\OOPS\OOPS\bin\Debug\OOPS.exe
+C:\Users\Admin\source\repos\Saurabh\OOPS\OOPS\bin\Debug\OOPS.pdb
+C:\Users\Admin\source\repos\Saurabh\OOPS\OOPS\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Admin\source\repos\Saurabh\OOPS\OOPS\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Admin\source\repos\Saurabh\OOPS\OOPS\obj\Debug\OOPS.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Saurabh\OOPS\OOPS\obj\Debug\OOPS.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Saurabh\OOPS\OOPS\obj\Debug\OOPS.csproj.CopyComplete
+C:\Users\Admin\source\repos\Saurabh\OOPS\OOPS\obj\Debug\OOPS.exe
+C:\Users\Admin\source\repos\Saurabh\OOPS\OOPS\obj\Debug\OOPS.pdb

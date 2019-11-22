@@ -1,0 +1,10 @@
+C:\Users\Admin\source\repos\Saurabh\OOPS\Stock Data Processing\bin\Debug\Stock Data Processing.exe.config
+C:\Users\Admin\source\repos\Saurabh\OOPS\Stock Data Processing\bin\Debug\Stock Data Processing.exe
+C:\Users\Admin\source\repos\Saurabh\OOPS\Stock Data Processing\bin\Debug\Stock Data Processing.pdb
+C:\Users\Admin\source\repos\Saurabh\OOPS\Stock Data Processing\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Admin\source\repos\Saurabh\OOPS\Stock Data Processing\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Admin\source\repos\Saurabh\OOPS\Stock Data Processing\obj\Debug\Stock Data Processing.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Saurabh\OOPS\Stock Data Processing\obj\Debug\Stock Data Processing.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Saurabh\OOPS\Stock Data Processing\obj\Debug\Stock Data Processing.csproj.CopyComplete
+C:\Users\Admin\source\repos\Saurabh\OOPS\Stock Data Processing\obj\Debug\Stock Data Processing.exe
+C:\Users\Admin\source\repos\Saurabh\OOPS\Stock Data Processing\obj\Debug\Stock Data Processing.pdb

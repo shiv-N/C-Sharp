@@ -18,10 +18,10 @@ namespace AlgorithamPrograms
         }
         public void Question(int firstValue,int lastValue)
         {
-            if (lastValue)
-            {
+            //if (lastValue)
+            //{
 
-            }
+            //}
             int mid = (firstValue + lastValue)/2;
             Console.WriteLine("is this  number "+mid+" is grater than your number ?");
             char answer = Convert.ToChar(Console.ReadLine());

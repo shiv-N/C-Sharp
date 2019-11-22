@@ -1,0 +1,7 @@
+C:\Users\Admin\source\repos\Saurabh\AlgorithamPrograms\AlgorithamPrograms\bin\Debug\AlgorithamPrograms.exe.config
+C:\Users\Admin\source\repos\Saurabh\AlgorithamPrograms\AlgorithamPrograms\bin\Debug\AlgorithamPrograms.exe
+C:\Users\Admin\source\repos\Saurabh\AlgorithamPrograms\AlgorithamPrograms\bin\Debug\AlgorithamPrograms.pdb
+C:\Users\Admin\source\repos\Saurabh\AlgorithamPrograms\AlgorithamPrograms\obj\Debug\AlgorithamPrograms.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Saurabh\AlgorithamPrograms\AlgorithamPrograms\obj\Debug\AlgorithamPrograms.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Saurabh\AlgorithamPrograms\AlgorithamPrograms\obj\Debug\AlgorithamPrograms.exe
+C:\Users\Admin\source\repos\Saurabh\AlgorithamPrograms\AlgorithamPrograms\obj\Debug\AlgorithamPrograms.pdb

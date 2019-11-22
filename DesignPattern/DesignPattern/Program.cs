@@ -45,7 +45,7 @@ using DesignPattern.Dependency_Injection;
                     case 4:
                         // dependancy Injection
                         CustomerService dependencyI = new CustomerService();
-                        dependencyI.GetCustomerName(22);
+                        Console.WriteLine(dependencyI.GetCustomerName(22));
                         break;
                     default:
                         Console.WriteLine("Invalid Option");
