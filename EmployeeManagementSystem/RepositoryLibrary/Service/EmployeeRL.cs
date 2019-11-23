@@ -11,7 +11,11 @@ namespace RepositoryLibrary
     public class EmployeeRL : IEmployeeRL
     {
         SqlConnection connection = new SqlConnection(@"Data Source=(localDB)\localhost;Initial Catalog=EmployeeDetails;Integrated Security=True");
-
+        /// <summary>
+        /// Deletes the employee.
+        /// </summary>
+        /// <param name="Id">The identifier.</param>
+        /// <returns>string</returns>
         public string DeleteEmployee(int Id)
         {
             using (connection)
@@ -31,7 +35,10 @@ namespace RepositoryLibrary
                 }
             }
         }
-
+        /// <summary>
+        /// Gets all employee.
+        /// </summary>
+        /// <returns>ModelCL list</returns>
         public IEnumerable<ModelCL> GetAllEmployee()
         {
             IList<ModelCL> employees = new List<ModelCL>();
@@ -58,7 +65,11 @@ namespace RepositoryLibrary
             }
             return employees;
         }
-
+        /// <summary>
+        /// Registers the specified model.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns>string</returns>
         public string Register(ModelCL model)
         {
             using (connection)
@@ -83,7 +94,11 @@ namespace RepositoryLibrary
                 }
             }
         }
-
+        /// <summary>
+        /// Updates the employee.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns>string</returns>
         public string UpdateEmployee(ModelCL model)
         {
             using (connection)

@@ -480,6 +480,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
+      "CommonLibrary >= 1.0.0",
       "RepositoryLibrary >= 1.0.0"
     ]
   },
@@ -513,6 +514,9 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
+            "C:\\Users\\Admin\\source\\repos\\Saurabh\\EmployeeManagementSystem\\CommonLibrary\\CommonLibrary.csproj": {
+              "projectPath": "C:\\Users\\Admin\\source\\repos\\Saurabh\\EmployeeManagementSystem\\CommonLibrary\\CommonLibrary.csproj"
+            },
             "C:\\Users\\Admin\\source\\repos\\Saurabh\\EmployeeManagementSystem\\RepositoryLibrary\\RepositoryLibrary.csproj": {
               "projectPath": "C:\\Users\\Admin\\source\\repos\\Saurabh\\EmployeeManagementSystem\\RepositoryLibrary\\RepositoryLibrary.csproj"
             }

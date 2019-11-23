@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v3.0": {
       "BusinessLibrary/1.0.0": {
         "dependencies": {
+          "CommonLibrary": "1.0.0",
           "RepositoryLibrary": "1.0.0"
         },
         "runtime": {
