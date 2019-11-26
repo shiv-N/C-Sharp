@@ -1,4 +1,3 @@
-C:\Users\Admin\source\repos\Saurabh\DataStructure\LinkedList\obj\Debug\LinkedList.csproj.CoreCompileInputs.cache
 C:\Users\Admin\source\repos\Saurabh\DataStructure\LinkedList\bin\Debug\LinkedList.exe.config
 C:\Users\Admin\source\repos\Saurabh\DataStructure\LinkedList\bin\Debug\LinkedList.exe
 C:\Users\Admin\source\repos\Saurabh\DataStructure\LinkedList\bin\Debug\LinkedList.pdb

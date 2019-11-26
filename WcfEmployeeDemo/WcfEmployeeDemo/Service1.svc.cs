@@ -1,33 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
+﻿//-----------------------------------------------------------------------
+// <copyright file="Service1.svs" company="Bridgelabz">
+//    Copyright © 2019 Company
+// </copyright>
+// <creator name="Saurabh Navdkar"/>
+// -----------------------------------------------------------------------
 
 namespace WcfEmployeeDemo
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
+    using System.Collections.Generic;
+    using System.Data;
+    using System.Data.SqlClient;
+    //// NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
+    //// NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.    
+    
+    /// <summary>
+    /// This is Service1 class contains implementation
+    /// </summary>
+    /// <seealso cref="WcfEmployeeDemo.IService1" />
     public class Service1 : IService1
     {
-        SqlConnection connection = new SqlConnection(@"Data Source=(localDB)\localhost;Initial Catalog=EmployeeDetails;Integrated Security=True");
+        /// <summary>
+        /// The connection
+        /// </summary>
+        private readonly SqlConnection connection = new SqlConnection(@"Data Source=(localDB)\localhost;Initial Catalog=EmployeeDetails;Integrated Security=True");
 
-        public string DeleteEmployee(Employee Id)
+        /// <summary>
+        /// Deletes the employee.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>string value</returns>
+        public string DeleteEmployee(Employee id)
         {
-            using (connection)
+            using (this.connection)
             {
-                SqlCommand command = new SqlCommand("spDeleteEmployee", connection);
+                SqlCommand command = new SqlCommand("spDeleteEmployee", this.connection);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("Id", Id.Id);
-                connection.Open();
+                command.Parameters.AddWithValue("Id", id.Id);
+                this.connection.Open();
                 int result = command.ExecuteNonQuery();
                 if (result != 0)
                 {
-                    return Id + " id Deleted from Database";
+                    return id + " id Deleted from Database";
                 }
                 else
                 {
@@ -36,15 +49,19 @@ namespace WcfEmployeeDemo
             }
         }
 
+        /// <summary>
+        /// Gets all employee.
+        /// </summary>
+        /// <returns>IEnumerable value </returns>
         public IEnumerable<Employee> GetAllEmployee()
         {
             IList<Employee> employees = new List<Employee>();
-            using (connection)
+            using (this.connection)
             {
-                SqlCommand command = new SqlCommand("spGetEmployee", connection);
+                SqlCommand command = new SqlCommand("spGetEmployee", this.connection);
                 command.CommandType = CommandType.StoredProcedure;
 
-                connection.Open();
+                this.connection.Open();
                 SqlDataReader dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
@@ -55,19 +72,25 @@ namespace WcfEmployeeDemo
                     model.Age = dataReader["Age"].ToString();
                     model.Email = dataReader["Email"].ToString();
                     model.EmployeeAddress = dataReader["EmployeeAddress"].ToString();
-
                     employees.Add(model);
                 }
-                connection.Close();
+
+                this.connection.Close();
             }
+
             return employees;
         }
 
+        /// <summary>
+        /// Registers the specified model.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns>string value </returns>
         public string Register(Employee model)
         {
-            using (connection)
+            using (this.connection)
             {
-                SqlCommand command = new SqlCommand("spInsertEmployee", connection);
+                SqlCommand command = new SqlCommand("spInsertEmployee", this.connection);
                 command.CommandType = CommandType.StoredProcedure;
 
                 command.Parameters.AddWithValue("@FirstName", model.FirstName);
@@ -75,7 +98,7 @@ namespace WcfEmployeeDemo
                 command.Parameters.AddWithValue("@Age", model.Age);
                 command.Parameters.AddWithValue("@Email", model.Email);
                 command.Parameters.AddWithValue("@EmployeeAddress", model.EmployeeAddress);
-                connection.Open();
+                this.connection.Open();
                 int result = command.ExecuteNonQuery();
                 if (result != 0)
                 {
@@ -88,11 +111,16 @@ namespace WcfEmployeeDemo
             }
         }
 
+        /// <summary>
+        /// Updates the employee.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns>string value</returns>
         public string UpdateEmployee(Employee model)
         {
-            using (connection)
+            using (this.connection)
             {
-                SqlCommand command = new SqlCommand("spUpdateEmployeeById", connection);
+                SqlCommand command = new SqlCommand("spUpdateEmployeeById", this.connection);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("Id", model.Id);
                 command.Parameters.AddWithValue("FirstName", model.FirstName);
@@ -100,7 +128,7 @@ namespace WcfEmployeeDemo
                 command.Parameters.AddWithValue("Age", model.Age);
                 command.Parameters.AddWithValue("Email", model.Email);
                 command.Parameters.AddWithValue("EmployeeAddress", model.EmployeeAddress);
-                connection.Open();
+                this.connection.Open();
                 int result = command.ExecuteNonQuery();
                 if (result != 0)
                 {
