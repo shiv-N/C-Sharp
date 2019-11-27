@@ -1,0 +1,8 @@
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\Common\bin\Debug\netcoreapp3.0\Common.deps.json
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\Common\bin\Debug\netcoreapp3.0\Common.dll
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\Common\bin\Debug\netcoreapp3.0\Common.pdb
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\Common\obj\Debug\netcoreapp3.0\Common.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\Common\obj\Debug\netcoreapp3.0\Common.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\Common\obj\Debug\netcoreapp3.0\Common.AssemblyInfo.cs
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\Common\obj\Debug\netcoreapp3.0\Common.dll
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\Common\obj\Debug\netcoreapp3.0\Common.pdb

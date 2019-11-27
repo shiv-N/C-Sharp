@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundooApp", "FundooApp\FundooApp.csproj", "{A6B09DF9-A19A-4950-9B84-88D110A57250}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FundooApi", "FundooApp\FundooApi.csproj", "{A6B09DF9-A19A-4950-9B84-88D110A57250}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessManager", "BusinessManager\BusinessManager.csproj", "{7EB3C0B2-C789-47A8-99B4-477F41A18A72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundooRepository", "FundooRepository\FundooRepository.csproj", "{52157FEA-A798-4421-927E-013B7C5552EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{0C00D339-C177-4A4E-868C-E6D2BC2BF9A3}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "FundooDataBase", "FundooDataBase\FundooDatabase.sqlproj", "{71E54261-F1C6-4565-A097-E02FE991E93E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,24 @@ Global
 		{A6B09DF9-A19A-4950-9B84-88D110A57250}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6B09DF9-A19A-4950-9B84-88D110A57250}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6B09DF9-A19A-4950-9B84-88D110A57250}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EB3C0B2-C789-47A8-99B4-477F41A18A72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EB3C0B2-C789-47A8-99B4-477F41A18A72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EB3C0B2-C789-47A8-99B4-477F41A18A72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EB3C0B2-C789-47A8-99B4-477F41A18A72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52157FEA-A798-4421-927E-013B7C5552EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52157FEA-A798-4421-927E-013B7C5552EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52157FEA-A798-4421-927E-013B7C5552EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52157FEA-A798-4421-927E-013B7C5552EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C00D339-C177-4A4E-868C-E6D2BC2BF9A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C00D339-C177-4A4E-868C-E6D2BC2BF9A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C00D339-C177-4A4E-868C-E6D2BC2BF9A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C00D339-C177-4A4E-868C-E6D2BC2BF9A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71E54261-F1C6-4565-A097-E02FE991E93E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71E54261-F1C6-4565-A097-E02FE991E93E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71E54261-F1C6-4565-A097-E02FE991E93E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{71E54261-F1C6-4565-A097-E02FE991E93E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71E54261-F1C6-4565-A097-E02FE991E93E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71E54261-F1C6-4565-A097-E02FE991E93E}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

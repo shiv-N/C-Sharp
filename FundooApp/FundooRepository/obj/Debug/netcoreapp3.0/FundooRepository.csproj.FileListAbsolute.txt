@@ -1,0 +1,11 @@
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\FundooRepository\bin\Debug\netcoreapp3.0\Common.dll
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\FundooRepository\obj\Debug\netcoreapp3.0\FundooRepository.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\FundooRepository\obj\Debug\netcoreapp3.0\FundooRepository.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\FundooRepository\obj\Debug\netcoreapp3.0\FundooRepository.AssemblyInfo.cs
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\FundooRepository\bin\Debug\netcoreapp3.0\FundooRepository.deps.json
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\FundooRepository\bin\Debug\netcoreapp3.0\FundooRepository.dll
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\FundooRepository\bin\Debug\netcoreapp3.0\FundooRepository.pdb
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\FundooRepository\bin\Debug\netcoreapp3.0\Common.pdb
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\FundooRepository\obj\Debug\netcoreapp3.0\FundooRepository.csproj.CopyComplete
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\FundooRepository\obj\Debug\netcoreapp3.0\FundooRepository.dll
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\FundooRepository\obj\Debug\netcoreapp3.0\FundooRepository.pdb

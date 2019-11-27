@@ -1,0 +1,13 @@
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\BusinessManager\bin\Debug\netcoreapp3.0\BusinessManager.deps.json
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\BusinessManager\bin\Debug\netcoreapp3.0\BusinessManager.dll
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\BusinessManager\bin\Debug\netcoreapp3.0\BusinessManager.pdb
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\BusinessManager\bin\Debug\netcoreapp3.0\Common.dll
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\BusinessManager\bin\Debug\netcoreapp3.0\FundooRepository.dll
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\BusinessManager\bin\Debug\netcoreapp3.0\FundooRepository.pdb
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\BusinessManager\bin\Debug\netcoreapp3.0\Common.pdb
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\BusinessManager\obj\Debug\netcoreapp3.0\BusinessManager.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\BusinessManager\obj\Debug\netcoreapp3.0\BusinessManager.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\BusinessManager\obj\Debug\netcoreapp3.0\BusinessManager.AssemblyInfo.cs
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\BusinessManager\obj\Debug\netcoreapp3.0\BusinessManager.csproj.CopyComplete
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\BusinessManager\obj\Debug\netcoreapp3.0\BusinessManager.dll
+C:\Users\Admin\source\repos\Saurabh\week 6\FundooApp\BusinessManager\obj\Debug\netcoreapp3.0\BusinessManager.pdb
