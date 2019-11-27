@@ -21,29 +21,26 @@ namespace EmployeeManagementSystem.Controllers
         }
 
         [HttpPost]    
-        public string Register(ModelCL model)
+        public IActionResult Register(ModelCL model)
         {
-            var result = this.employeeBL.Register(model);
-            return result;
+            return Ok(this.employeeBL.Register(model));
         }
         [Route("update")]
         [HttpPost]
-        public string UpdateEmployee(ModelCL model)
+        public IActionResult UpdateEmployee(ModelCL model)
         {
-            var result = this.employeeBL.UpdateEmployee(model);
-            return result;
+            return Ok(this.employeeBL.UpdateEmployee(model));
         }
         [Route("delete")]
         [HttpDelete]
-        public string DeleteEmployee(int Id)
+        public IActionResult DeleteEmployee(int Id)
         {
-            var result = this.employeeBL.DeleteEmployee(Id);
-            return result;
+            return Ok(this.employeeBL.DeleteEmployee(Id));
         }
         [HttpGet]
-        public IEnumerable<ModelCL> GetAllEmployee()
+        public IActionResult GetAllEmployee()
         {
-            return this.employeeBL.GetAllEmployee();
+            return Ok(this.employeeBL.GetAllEmployee());
         }
     }
 }
