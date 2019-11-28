@@ -58,8 +58,11 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="StoreProcedure" />
+    <Folder Include="Tables" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="StoreProcedure\spInsertUser.sql" />
+    <Build Include="StoreProcedure\spLogin.sql" />
+    <Build Include="Tables\FundooApp.sql" />
   </ItemGroup>
 </Project>

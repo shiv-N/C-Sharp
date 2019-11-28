@@ -23,6 +23,19 @@ namespace FundooApi.Controllers
         {
             return Ok(this.account.Register(model));
         }
-
+        [Route("login")]
+        [HttpPost]
+        public IActionResult Login(FundooModels model)
+        {
+            FundooModels validModel= account.Login(model);
+            if (validModel.Email == null)
+            {
+                return Ok("Invalid login Id or Password.");
+            }
+            else
+            {
+                return Ok(validModel);
+            }
+        }
     }
 }

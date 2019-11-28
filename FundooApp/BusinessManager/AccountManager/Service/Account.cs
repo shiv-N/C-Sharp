@@ -25,5 +25,17 @@ namespace BusinessManager
                 return "Insufficients details....";
             }
         }
+
+        public FundooModels Login(FundooModels model)
+        {
+            if (model != null)
+            {
+                return account.Login(model);
+            }
+            else
+            {
+                return model;
+            }
+        }
     }
 }

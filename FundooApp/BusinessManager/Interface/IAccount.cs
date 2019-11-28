@@ -8,6 +8,7 @@ namespace BusinessManager.Interface
     public interface IAccount
     {
         string Register(FundooModels model);
+        public FundooModels Login(FundooModels model);
         //public IEnumerable<FundooModels> GetAllEmployee();
     }
 }
