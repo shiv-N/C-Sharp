@@ -64,5 +64,6 @@
     <Build Include="StoreProcedure\spInsertUser.sql" />
     <Build Include="StoreProcedure\spLogin.sql" />
     <Build Include="Tables\FundooApp.sql" />
+    <Build Include="StoreProcedure\spForgotPassword.sql" />
   </ItemGroup>
 </Project>

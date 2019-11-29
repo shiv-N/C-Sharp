@@ -1,8 +1,13 @@
 ﻿using Common;
+using Common.Models;
 using FundooRepository.Interface;
+using Microsoft.IdentityModel.Tokens;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -78,6 +83,24 @@ namespace FundooRepository
                         newModel.Email = dataReader["Email"].ToString();
                         newModel.PhoneNumber = dataReader["PhoneNumber"].ToString();
                         newModel.UserAddress = dataReader["UserAddress"].ToString();
+                        var secretkey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"));
+                        var signinCredentials = new SigningCredentials(secretkey, SecurityAlgorithms.HmacSha256);
+
+                        var claims = new List<Claim>
+                        {
+                            new Claim(ClaimTypes.Email, newModel.Email),
+                            new Claim(ClaimTypes.Role, "User")
+                        };
+                        var tokenOptionOne = new JwtSecurityToken(
+                            issuer: "http://localhost:5000",
+                            audience: "http://localhost:5000",
+                            claims: claims,
+                            expires: DateTime.Now.AddMinutes(2),
+                            signingCredentials:signinCredentials
+                            );
+
+
+                        newModel.Token = new JwtSecurityTokenHandler().WriteToken(tokenOptionOne);
                         break;
                     }
                 }
@@ -88,6 +111,42 @@ namespace FundooRepository
             {
                 throw e;
             }
+        }
+
+        public IEnumerable<FundooModels> GetAllEmployee()
+        {
+            throw new NotImplementedException();
+        }
+        public string ForgotPassword(ForgotPassword model)
+        {
+            SqlCommand command = new SqlCommand("spForgotPassword", connection);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@Email", model.Email);
+            connection.Open();
+            SqlDataReader dataReader = command.ExecuteReader();
+            string token =string.Empty;
+            if (dataReader.Read())
+            {
+                var secretkey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"));
+                var signinCredentials = new SigningCredentials(secretkey, SecurityAlgorithms.HmacSha256);
+
+                var claims = new List<Claim>
+                        {
+                            new Claim(ClaimTypes.Email, model.Email),
+                            new Claim(ClaimTypes.Role, "User")
+                        };
+                var tokenOptionOne = new JwtSecurityToken(
+                    issuer: "http://localhost:5000",
+                    audience: "http://localhost:5000",
+                    claims: claims,
+                    expires: DateTime.Now.AddMinutes(2),
+                    signingCredentials: signinCredentials
+                    );
+
+
+                token = new JwtSecurityTokenHandler().WriteToken(tokenOptionOne);
+            }    
+            return token;
         }
     }
 }

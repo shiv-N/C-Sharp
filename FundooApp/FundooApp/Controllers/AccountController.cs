@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using BusinessManager.Interface;
 using Common;
+using Microsoft.AspNetCore.Authorization;
+using Common.Models;
 
 namespace FundooApi.Controllers
 {
@@ -35,6 +37,27 @@ namespace FundooApi.Controllers
             else
             {
                 return Ok(validModel);
+            }
+        }
+        [HttpGet,Authorize]
+        public IEnumerable<FundooModels> GetAllEmployee()
+        {
+            throw new NotImplementedException();
+        }
+        [HttpPost("forgot")]
+        [AllowAnonymous]
+        public IActionResult ForgotPassword(ForgotPassword model)
+        {
+            string userToken = account.ForgotPassword(model);
+            if (userToken != string.Empty)
+            {
+                var passwordRestLink = Url.Action("ResetPassword", "Account",
+                    new { email = model.Email, token = userToken }, Request.Scheme);
+                return Ok(userToken);
+            }
+            else
+            {
+                return Ok("Invalid email");
             }
         }
     }

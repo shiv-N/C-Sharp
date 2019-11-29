@@ -1,5 +1,6 @@
 ﻿using BusinessManager.Interface;
 using Common;
+using Common.Models;
 using FundooRepository.Interface;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,11 @@ namespace BusinessManager
             {
                 return model;
             }
+        }
+
+        public string ForgotPassword(ForgotPassword model)
+        {
+            return account.ForgotPassword(model);
         }
     }
 }

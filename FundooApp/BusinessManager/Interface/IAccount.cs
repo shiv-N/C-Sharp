@@ -1,4 +1,5 @@
 ﻿using Common;
+using Common.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,5 +11,6 @@ namespace BusinessManager.Interface
         string Register(FundooModels model);
         public FundooModels Login(FundooModels model);
         //public IEnumerable<FundooModels> GetAllEmployee();
+        public string ForgotPassword(ForgotPassword model);
     }
 }
