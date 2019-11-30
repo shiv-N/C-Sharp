@@ -13,5 +13,6 @@ namespace FundooRepository.Interface
         public FundooModels Login(FundooModels model);
         public IEnumerable<FundooModels> GetAllEmployee();
         public string ForgotPassword(ForgotPassword model);
+        public string ResetPassword(ResetModel token);
     }
 }

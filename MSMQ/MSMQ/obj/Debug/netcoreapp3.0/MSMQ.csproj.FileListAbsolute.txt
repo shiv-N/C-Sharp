@@ -1,0 +1,13 @@
+C:\Users\Admin\source\repos\Saurabh\week 6\MSMQ\MSMQ\bin\Debug\netcoreapp3.0\MSMQ.exe
+C:\Users\Admin\source\repos\Saurabh\week 6\MSMQ\MSMQ\obj\Debug\netcoreapp3.0\MSMQ.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Saurabh\week 6\MSMQ\MSMQ\obj\Debug\netcoreapp3.0\MSMQ.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\Saurabh\week 6\MSMQ\MSMQ\obj\Debug\netcoreapp3.0\MSMQ.AssemblyInfo.cs
+C:\Users\Admin\source\repos\Saurabh\week 6\MSMQ\MSMQ\bin\Debug\netcoreapp3.0\MSMQ.deps.json
+C:\Users\Admin\source\repos\Saurabh\week 6\MSMQ\MSMQ\bin\Debug\netcoreapp3.0\MSMQ.runtimeconfig.json
+C:\Users\Admin\source\repos\Saurabh\week 6\MSMQ\MSMQ\bin\Debug\netcoreapp3.0\MSMQ.runtimeconfig.dev.json
+C:\Users\Admin\source\repos\Saurabh\week 6\MSMQ\MSMQ\bin\Debug\netcoreapp3.0\MSMQ.dll
+C:\Users\Admin\source\repos\Saurabh\week 6\MSMQ\MSMQ\bin\Debug\netcoreapp3.0\MSMQ.pdb
+C:\Users\Admin\source\repos\Saurabh\week 6\MSMQ\MSMQ\bin\Debug\netcoreapp3.0\Experimental.System.Messaging.dll
+C:\Users\Admin\source\repos\Saurabh\week 6\MSMQ\MSMQ\obj\Debug\netcoreapp3.0\MSMQ.csproj.CopyComplete
+C:\Users\Admin\source\repos\Saurabh\week 6\MSMQ\MSMQ\obj\Debug\netcoreapp3.0\MSMQ.dll
+C:\Users\Admin\source\repos\Saurabh\week 6\MSMQ\MSMQ\obj\Debug\netcoreapp3.0\MSMQ.pdb

@@ -59,6 +59,12 @@ namespace FundooApi.Controllers
             {
                 return Ok("Invalid email");
             }
+        }                                                                                                                        
+        [Route("reset")]
+        [HttpPost]
+        public IActionResult ResetPassword(ResetModel token)
+        {
+            return Ok(account.ResetPassword(token));
         }
     }
 }

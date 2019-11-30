@@ -1,12 +1,14 @@
 ﻿using Common;
 using Common.Models;
 using FundooRepository.Interface;
+using FundooRepository.MSMQ;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
@@ -16,7 +18,8 @@ namespace FundooRepository
     public class AccountRepository : IAccountRepository
     {
         SqlConnection connection = new SqlConnection(@"Data Source=(localDB)\localhost;Initial Catalog=EmployeeDetails;Integrated Security=True");
-
+        MsmqSender msmq;
+        
         public string Register(FundooModels model)
         {
             try
@@ -95,7 +98,7 @@ namespace FundooRepository
                             issuer: "http://localhost:5000",
                             audience: "http://localhost:5000",
                             claims: claims,
-                            expires: DateTime.Now.AddMinutes(2),
+                            expires: DateTime.Now.AddMinutes(20),
                             signingCredentials:signinCredentials
                             );
 
@@ -119,12 +122,13 @@ namespace FundooRepository
         }
         public string ForgotPassword(ForgotPassword model)
         {
+
+            string email = model.Email;
             SqlCommand command = new SqlCommand("spForgotPassword", connection);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.AddWithValue("@Email", model.Email);
             connection.Open();
             SqlDataReader dataReader = command.ExecuteReader();
-            string token =string.Empty;
             if (dataReader.Read())
             {
                 var secretkey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"));
@@ -132,21 +136,43 @@ namespace FundooRepository
 
                 var claims = new List<Claim>
                         {
-                            new Claim(ClaimTypes.Email, model.Email),
+                            new Claim("email", email),
                             new Claim(ClaimTypes.Role, "User")
                         };
                 var tokenOptionOne = new JwtSecurityToken(
                     issuer: "http://localhost:5000",
                     audience: "http://localhost:5000",
                     claims: claims,
-                    expires: DateTime.Now.AddMinutes(2),
+                    expires: DateTime.Now.AddMinutes(10),
                     signingCredentials: signinCredentials
                     );
-
-
-                token = new JwtSecurityTokenHandler().WriteToken(tokenOptionOne);
+                string token = new JwtSecurityTokenHandler().WriteToken(tokenOptionOne);
+                msmq = new MsmqSender();
+                msmq.SendToMsmq(token,model.Email);
+                return "ForgotPasswordConformation";
             }    
-            return token;
+            return string.Empty;
+        }
+        public string ResetPassword(ResetModel resetModel)
+        {
+            var stream = resetModel.token;
+            var handler = new JwtSecurityTokenHandler();
+            var jsonToken = handler.ReadToken(stream);
+            var tokenS = handler.ReadToken(stream) as JwtSecurityToken;
+            var email = tokenS.Claims.FirstOrDefault(claim => claim.Type == "email").Value;
+            var provider = new SHA1CryptoServiceProvider();
+            var encoding = new UnicodeEncoding();
+            byte[] encrypt = provider.ComputeHash(encoding.GetBytes(resetModel.password));
+            String encrypted = Convert.ToBase64String(encrypt);
+            SqlCommand command = new SqlCommand("spUpdatePasswordByEmail", connection);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@Email", email);
+            command.Parameters.AddWithValue("@Password", encrypted);
+            connection.Open();
+            SqlDataReader dataReader = command.ExecuteReader();
+            connection.Close();
+            return "updated";
+
         }
     }
 }

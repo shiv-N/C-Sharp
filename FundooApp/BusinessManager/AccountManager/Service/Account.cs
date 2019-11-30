@@ -43,5 +43,10 @@ namespace BusinessManager
         {
             return account.ForgotPassword(model);
         }
+
+        public string ResetPassword(ResetModel token)
+        {
+            return account.ResetPassword(token);
+        }
     }
 }

@@ -317,6 +317,17 @@
           "FundooApi.dll": {}
         }
       },
+      "Experimental.System.Messaging/1.1.0": {
+        "runtime": {
+          "lib/netstandard2.0/Experimental.System.Messaging.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Experimental.System.Messaging.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authentication.JwtBearer/3.0.0": {
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "5.5.0"
@@ -1715,6 +1726,9 @@
         }
       },
       "Common/1.0.0": {
+        "dependencies": {
+          "Experimental.System.Messaging": "1.1.0"
+        },
         "runtime": {
           "Common.dll": {}
         },
@@ -1725,7 +1739,6 @@
       "FundooRepository/1.0.0": {
         "dependencies": {
           "Common": "1.0.0",
-          "Microsoft.IdentityModel.Tokens": "5.6.0",
           "System.Data.SqlClient": "4.7.0",
           "System.IdentityModel.Tokens.Jwt": "5.6.0"
         },
@@ -3435,6 +3448,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Experimental.System.Messaging/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vub7Mtt2WFdFKTZKECVuZx6feP5kUpS9EfVy+Yu4GDfdlMwivRdX4TbdkDYS2lKqCjqzUbnxTbJei1IOqC+CnA==",
+      "path": "experimental.system.messaging/1.1.0",
+      "hashPath": "experimental.system.messaging.1.1.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/3.0.0": {
       "type": "package",
