@@ -1,49 +1,82 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using BusinessManager.Interface;
-using Common;
-using Microsoft.AspNetCore.Authorization;
-using Common.Models;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="AccountController.cs" company="Bridgelabz">
+//    Copyright © 2019 Company
+// </copyright>
+// <creator name="Saurabh Navdkar"/>
+// -----------------------------------------------------------------------
 namespace FundooApi.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Mvc;
+    using BusinessManager.Interface;
+    using Common;
+    using Microsoft.AspNetCore.Authorization;
+    using Common.Models;
+
+    /// <summary>
+    /// this claa AccountController
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class AccountController : ControllerBase
     {
+        /// <summary>
+        /// this is account
+        /// </summary>
         private readonly IAccount account;
+
+        /// <summary>
+        /// this is method AccountController
+        /// </summary>
+        /// <param name="account"></param>
         public AccountController(IAccount account)
         {
             this.account = account;
         }
+
+        /// <summary>
+        /// this is method Register
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Register(FundooModels model)
         {
             return Ok(this.account.Register(model));
         }
+
+        /// <summary>
+        /// this is method Login
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [Route("login")]
         [HttpPost]
         public IActionResult Login(FundooModels model)
         {
-            FundooModels validModel= account.Login(model);
-            if (validModel.Email == null)
-            {
-                return Ok("Invalid login Id or Password.");
-            }
-            else
-            {
-                return Ok(validModel);
-            }
+            return Ok(account.Login(model));
+           
         }
+
+        /// <summary>
+        /// this is method  GetAllEmployee
+        /// </summary>
+        /// <returns></returns>
         [HttpGet,Authorize]
         public IEnumerable<FundooModels> GetAllEmployee()
         {
             throw new NotImplementedException();
         }
+
+        /// <summary>
+        /// this is mehtod ForgotPassword
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost("forgot")]
         [AllowAnonymous]
         public IActionResult ForgotPassword(ForgotPassword model)
@@ -59,7 +92,13 @@ namespace FundooApi.Controllers
             {
                 return Ok("Invalid email");
             }
-        }                                                                                                                        
+        }
+
+        /// <summary>
+        /// this is method ResetPassword
+        /// </summary>
+        /// <param name="token"></param>
+        /// <returns></returns>
         [Route("reset")]
         [HttpPost]
         public IActionResult ResetPassword(ResetModel token)

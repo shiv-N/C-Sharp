@@ -21,7 +21,6 @@ namespace MSMQ
 
                 SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
                 client.EnableSsl = true;
-                client.Timeout = 10000;
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
                 client.UseDefaultCredentials = false;
                 client.Credentials = new NetworkCredential("saurabhnavdkar112@gmail.com", "saurabh@123");

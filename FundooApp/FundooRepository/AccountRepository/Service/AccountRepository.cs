@@ -1,25 +1,48 @@
-﻿using Common;
-using Common.Models;
-using FundooRepository.Interface;
-using FundooRepository.MSMQ;
-using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Security.Claims;
-using System.Security.Cryptography;
-using System.Text;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="AccountRepository.cs" company="Bridgelabz">
+//    Copyright © 2019 Company
+// </copyright>
+// <creator name="Saurabh Navdkar"/>
+// ----------------------------------------------------------------------
 namespace FundooRepository
 {
+    using Common;
+    using Common.Models;
+    using FundooRepository.Interface;
+    using FundooRepository.MSMQ;
+    using Microsoft.IdentityModel.Tokens;
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+    using System.Data.SqlClient;
+    using System.IdentityModel.Tokens.Jwt;
+    using System.Linq;
+    using System.Security.Claims;
+    using System.Security.Cryptography;
+    using System.Text;
+
+    /// <summary>
+    /// this is class AccountRepository
+    /// </summary>
+    /// <seealso cref="FundooRepository.Interface.IAccountRepository" />
     public class AccountRepository : IAccountRepository
     {
+        /// <summary>
+        /// The connection
+        /// </summary>
         SqlConnection connection = new SqlConnection(@"Data Source=(localDB)\localhost;Initial Catalog=EmployeeDetails;Integrated Security=True");
+
+        /// <summary>
+        /// The MSMQ
+        /// </summary>
         MsmqSender msmq;
-        
+
+        /// <summary>
+        /// Registers the specified model.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentNullException">Password</exception>
         public string Register(FundooModels model)
         {
             try
@@ -61,7 +84,12 @@ namespace FundooRepository
             }
         }
 
-        public FundooModels Login(FundooModels model)
+        /// <summary>
+        /// Logins the specified model.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns></returns>
+        public string Login(FundooModels model)
         {
             try
             {
@@ -75,23 +103,23 @@ namespace FundooRepository
                 command.Parameters.AddWithValue("@Password", encrypted);
                 connection.Open();
                  SqlDataReader dataReader = command.ExecuteReader();
-                FundooModels newModel = new FundooModels();
+                string token = string.Empty;
                 while (dataReader.Read())
                 {
                     if ((dataReader["Email"].ToString()).Equals(model.Email))
                     {
-                        newModel.Id = (int)dataReader["Id"];
-                        newModel.FirstName = dataReader["Firstname"].ToString();
-                        newModel.LastName = dataReader["Lastname"].ToString();
-                        newModel.Email = dataReader["Email"].ToString();
-                        newModel.PhoneNumber = dataReader["PhoneNumber"].ToString();
-                        newModel.UserAddress = dataReader["UserAddress"].ToString();
+                        //newModel.Id = (int)dataReader["Id"];
+                        //newModel.FirstName = dataReader["Firstname"].ToString();
+                        //newModel.LastName = dataReader["Lastname"].ToString();
+                        //newModel.Email = dataReader["Email"].ToString();
+                        //newModel.PhoneNumber = dataReader["PhoneNumber"].ToString();
+                        //newModel.UserAddress = dataReader["UserAddress"].ToString();
                         var secretkey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"));
                         var signinCredentials = new SigningCredentials(secretkey, SecurityAlgorithms.HmacSha256);
 
                         var claims = new List<Claim>
                         {
-                            new Claim(ClaimTypes.Email, newModel.Email),
+                            new Claim(ClaimTypes.Email, model.Email),
                             new Claim(ClaimTypes.Role, "User")
                         };
                         var tokenOptionOne = new JwtSecurityToken(
@@ -103,12 +131,12 @@ namespace FundooRepository
                             );
 
 
-                        newModel.Token = new JwtSecurityTokenHandler().WriteToken(tokenOptionOne);
+                        token =  new JwtSecurityTokenHandler().WriteToken(tokenOptionOne);
                         break;
                     }
                 }
                 connection.Close();
-                return newModel;
+                return token;
         }
             catch (Exception e)
             {
@@ -116,10 +144,21 @@ namespace FundooRepository
             }
         }
 
+        /// <summary>
+        /// Gets all employee.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public IEnumerable<FundooModels> GetAllEmployee()
         {
             throw new NotImplementedException();
         }
+
+        /// <summary>
+        /// Forgots the password.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns></returns>
         public string ForgotPassword(ForgotPassword model)
         {
 
@@ -153,6 +192,12 @@ namespace FundooRepository
             }    
             return string.Empty;
         }
+
+        /// <summary>
+        /// Resets the password.
+        /// </summary>
+        /// <param name="resetModel">The reset model.</param>
+        /// <returns></returns>
         public string ResetPassword(ResetModel resetModel)
         {
             var stream = resetModel.token;
