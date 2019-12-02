@@ -20,6 +20,7 @@ namespace FundooRepository
     using System.Security.Claims;
     using System.Security.Cryptography;
     using System.Text;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// this is class AccountRepository
@@ -43,7 +44,7 @@ namespace FundooRepository
         /// <param name="model">The model.</param>
         /// <returns></returns>
         /// <exception cref="System.ArgumentNullException">Password</exception>
-        public string Register(FundooModels model)
+        public async Task<string> RegisterAsync(FundooModels model)
         {
             try
             {
@@ -66,7 +67,7 @@ namespace FundooRepository
                     command.Parameters.AddWithValue("Password", encrypted);
                     command.Parameters.AddWithValue("UserAddress", model.UserAddress);
                     connection.Open();
-                    int result = command.ExecuteNonQuery();
+                    int result = await command.ExecuteNonQueryAsync();
                     connection.Close();
                     if (result != 0)
                     {
@@ -108,12 +109,6 @@ namespace FundooRepository
                 {
                     if ((dataReader["Email"].ToString()).Equals(model.Email))
                     {
-                        //newModel.Id = (int)dataReader["Id"];
-                        //newModel.FirstName = dataReader["Firstname"].ToString();
-                        //newModel.LastName = dataReader["Lastname"].ToString();
-                        //newModel.Email = dataReader["Email"].ToString();
-                        //newModel.PhoneNumber = dataReader["PhoneNumber"].ToString();
-                        //newModel.UserAddress = dataReader["UserAddress"].ToString();
                         var secretkey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"));
                         var signinCredentials = new SigningCredentials(secretkey, SecurityAlgorithms.HmacSha256);
 
@@ -130,8 +125,7 @@ namespace FundooRepository
                             signingCredentials:signinCredentials
                             );
 
-
-                        token =  new JwtSecurityTokenHandler().WriteToken(tokenOptionOne);
+                        token = new JwtSecurityTokenHandler().WriteToken(tokenOptionOne);
                         break;
                     }
                 }
@@ -198,7 +192,7 @@ namespace FundooRepository
         /// </summary>
         /// <param name="resetModel">The reset model.</param>
         /// <returns></returns>
-        public string ResetPassword(ResetModel resetModel)
+        public  string ResetPassword(ResetModel resetModel)
         {
             var stream = resetModel.token;
             var handler = new JwtSecurityTokenHandler();

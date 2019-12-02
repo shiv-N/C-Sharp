@@ -10,6 +10,7 @@ namespace BusinessManager
     using Common;
     using Common.Models;
     using FundooRepository.Interface;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// this is class Account
@@ -36,11 +37,12 @@ namespace BusinessManager
         /// </summary>
         /// <param name="model">The model.</param>
         /// <returns></returns>
-        public string Register(FundooModels model)
+        public async Task<string> RegisterAsync(FundooModels model)
         {
             if(model != null)
             {
-                return this.account.Register(model);
+                string result = await account.RegisterAsync(model);
+                return result;
             }
             else
             {

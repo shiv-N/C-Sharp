@@ -11,6 +11,7 @@ namespace FundooRepository.Interface
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// this is interface 
@@ -22,7 +23,7 @@ namespace FundooRepository.Interface
         /// </summary>
         /// <param name="model">The model.</param>
         /// <returns></returns>
-        string Register(FundooModels model);
+        Task<string> RegisterAsync(FundooModels model);
 
         /// <summary>
         /// Logins the specified model.

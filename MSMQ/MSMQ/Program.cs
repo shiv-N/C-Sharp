@@ -1,13 +1,25 @@
-﻿using System;
-using Experimental.System.Messaging;
-using System.Net;
-using System.Net.Mail;
-using System.Net.Mime;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="Program.cs" company="Bridgelabz">
+//    Copyright © 2019 Company
+// </copyright>
+// <creator name="Saurabh Navdkar"/>
+// ----------------------------------------------------------------------
 namespace MSMQ
 {
+    using System;
+    using Experimental.System.Messaging;
+    using System.Net;
+    using System.Net.Mail;
+
+    /// <summary>
+    /// this is class program
+    /// </summary>
     class Program
     {
+        /// <summary>
+        /// this is entry point of program
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             MessageQueue msmq = new MessageQueue();

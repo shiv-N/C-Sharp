@@ -17,9 +17,9 @@ namespace FundooTest.UserAccount
             var repository = new Mock<IAccountRepository>();
             var business = new Account(repository.Object);
 
-            var model = new FundooModels()
+            var modelRegister = new FundooModels()
             {
-                Id = 5,
+              
                 FirstName = "shiv",
                 LastName = "charan",
                 PhoneNumber = "6423894630",
@@ -29,10 +29,24 @@ namespace FundooTest.UserAccount
                 Token = "redrtd"
                 
             };
+            
+            var dataRegister = business.RegisterAsync(modelRegister);
+            Assert.NotNull(dataRegister);
+        }
 
-            var data = business.Register(model);
+        [Fact]
+        public void AccountLogin()
+        {
+            var repository = new Mock<IAccountRepository>();
+            var business = new Account(repository.Object);
 
-            Assert.NotNull(data);
+            var modelLogin = new FundooModels()
+            {
+                Email = "shiva@Gmail.com",
+                Password = "QWERTY@123"
+            };
+            var dataLogin = business.Login(modelLogin);
+            Assert.NotNull(dataLogin);
         }
     }
 }

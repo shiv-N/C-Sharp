@@ -44,9 +44,9 @@ namespace FundooApi.Controllers
         /// <param name="model"></param>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult Register(FundooModels model)
+        public async Task<IActionResult> RegisterAsync(FundooModels model)
         {
-            return Ok(this.account.Register(model));
+            return  Ok(await account.RegisterAsync(model));
         }
 
         /// <summary>

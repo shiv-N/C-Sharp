@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BusinessManager\BusinessManager.csproj" />
+    <ProjectReference Include="..\FundooApp\FundooApi.csproj" />
     <ProjectReference Include="..\FundooRepository\FundooRepository.csproj" />
   </ItemGroup>
 
