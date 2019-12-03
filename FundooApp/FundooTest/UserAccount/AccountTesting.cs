@@ -1,5 +1,6 @@
 ﻿using BusinessManager;
 using Common;
+using Common.Models;
 using FundooRepository.Interface;
 using Moq;
 using System;
@@ -17,7 +18,7 @@ namespace FundooTest.UserAccount
             var repository = new Mock<IAccountRepository>();
             var business = new Account(repository.Object);
 
-            var modelRegister = new FundooModels()
+            var modelRegister = new RegisterRequestModel()
             {
               
                 FirstName = "shiv",
@@ -40,7 +41,7 @@ namespace FundooTest.UserAccount
             var repository = new Mock<IAccountRepository>();
             var business = new Account(repository.Object);
 
-            var modelLogin = new FundooModels()
+            var modelLogin = new LoginRequestModel()
             {
                 Email = "shiva@Gmail.com",
                 Password = "QWERTY@123"

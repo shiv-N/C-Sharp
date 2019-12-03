@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csp
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "FundooDatabase", "FundooDataBase\FundooDatabase.sqlproj", "{71E54261-F1C6-4565-A097-E02FE991E93E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundooTest", "FundooTest\FundooTest.csproj", "{11B01EAD-74A5-4AAB-86ED-8FFAA5F3A443}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FundooTest", "FundooTest\FundooTest.csproj", "{11B01EAD-74A5-4AAB-86ED-8FFAA5F3A443}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -44,7 +44,7 @@ namespace FundooApi.Controllers
         /// <param name="model"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> RegisterAsync(FundooModels model)
+        public async Task<IActionResult> RegisterAsync(RegisterRequestModel model)
         {
             return  Ok(await account.RegisterAsync(model));
         }
@@ -56,7 +56,7 @@ namespace FundooApi.Controllers
         /// <returns></returns>
         [Route("login")]
         [HttpPost]
-        public IActionResult Login(FundooModels model)
+        public IActionResult Login(LoginRequestModel model)
         {
             return Ok(account.Login(model));
            
@@ -67,7 +67,7 @@ namespace FundooApi.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet,Authorize]
-        public IEnumerable<FundooModels> GetAllEmployee()
+        public IEnumerable<RegisterRequestModel> GetAllEmployee()
         {
             throw new NotImplementedException();
         }

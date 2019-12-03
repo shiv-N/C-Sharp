@@ -23,14 +23,14 @@ namespace BusinessManager.Interface
         /// </summary>
         /// <param name="model">The model.</param>
         /// <returns></returns>
-        Task<string> RegisterAsync(FundooModels model);
+        Task<string> RegisterAsync(RegisterRequestModel model);
 
         /// <summary>
         /// Logins the specified model.
         /// </summary>
         /// <param name="model">The model.</param>
         /// <returns></returns>
-        public string Login(FundooModels model);
+        public string Login(LoginRequestModel model);
         //public IEnumerable<FundooModels> GetAllEmployee();
 
         /// <summary>

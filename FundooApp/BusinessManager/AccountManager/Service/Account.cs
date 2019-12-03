@@ -37,7 +37,7 @@ namespace BusinessManager
         /// </summary>
         /// <param name="model">The model.</param>
         /// <returns></returns>
-        public async Task<string> RegisterAsync(FundooModels model)
+        public async Task<string> RegisterAsync(RegisterRequestModel model)
         {
             if(model != null)
             {
@@ -55,7 +55,7 @@ namespace BusinessManager
         /// </summary>
         /// <param name="model">The model.</param>
         /// <returns></returns>
-        public string Login(FundooModels model)
+        public string Login(LoginRequestModel model)
         {
             if (model != null)
             {

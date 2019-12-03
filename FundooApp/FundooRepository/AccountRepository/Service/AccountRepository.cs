@@ -44,7 +44,7 @@ namespace FundooRepository
         /// <param name="model">The model.</param>
         /// <returns></returns>
         /// <exception cref="System.ArgumentNullException">Password</exception>
-        public async Task<string> RegisterAsync(FundooModels model)
+        public async Task<string> RegisterAsync(RegisterRequestModel model)
         {
             try
             {
@@ -90,16 +90,12 @@ namespace FundooRepository
         /// </summary>
         /// <param name="model">The model.</param>
         /// <returns></returns>
-        public string Login(FundooModels model)
+        public string Login(LoginRequestModel model)
         {
             try
             {
-                var provider = new SHA1CryptoServiceProvider();
-                var encoding = new UnicodeEncoding();
-                byte[] encrypt = provider.ComputeHash(encoding.GetBytes(model.Password));
-                String encrypted = Convert.ToBase64String(encrypt);
-                SqlCommand command = new SqlCommand("spLogin", connection);
-                command.CommandType = CommandType.StoredProcedure;
+                String encrypted = EncryptPassword(model.Password);
+                SqlCommand command = StoreProcedureConnection("spLogin");
                 command.Parameters.AddWithValue("@Email", model.Email);
                 command.Parameters.AddWithValue("@Password", encrypted);
                 connection.Open();
@@ -109,23 +105,7 @@ namespace FundooRepository
                 {
                     if ((dataReader["Email"].ToString()).Equals(model.Email))
                     {
-                        var secretkey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"));
-                        var signinCredentials = new SigningCredentials(secretkey, SecurityAlgorithms.HmacSha256);
-
-                        var claims = new List<Claim>
-                        {
-                            new Claim(ClaimTypes.Email, model.Email),
-                            new Claim(ClaimTypes.Role, "User")
-                        };
-                        var tokenOptionOne = new JwtSecurityToken(
-                            issuer: "http://localhost:5000",
-                            audience: "http://localhost:5000",
-                            claims: claims,
-                            expires: DateTime.Now.AddMinutes(20),
-                            signingCredentials:signinCredentials
-                            );
-
-                        token = new JwtSecurityTokenHandler().WriteToken(tokenOptionOne);
+                        token = GenrateJWTToken(model.Email);
                         break;
                     }
                 }
@@ -143,7 +123,7 @@ namespace FundooRepository
         /// </summary>
         /// <returns></returns>
         /// <exception cref="System.NotImplementedException"></exception>
-        public IEnumerable<FundooModels> GetAllEmployee()
+        public IEnumerable<RegisterRequestModel> GetAllEmployee()
         {
             throw new NotImplementedException();
         }
@@ -157,34 +137,25 @@ namespace FundooRepository
         {
 
             string email = model.Email;
-            SqlCommand command = new SqlCommand("spForgotPassword", connection);
-            command.CommandType = CommandType.StoredProcedure;
+            SqlCommand command = StoreProcedureConnection("spForgotPassword");
             command.Parameters.AddWithValue("@Email", model.Email);
             connection.Open();
             SqlDataReader dataReader = command.ExecuteReader();
             if (dataReader.Read())
             {
-                var secretkey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"));
-                var signinCredentials = new SigningCredentials(secretkey, SecurityAlgorithms.HmacSha256);
-
-                var claims = new List<Claim>
-                        {
-                            new Claim("email", email),
-                            new Claim(ClaimTypes.Role, "User")
-                        };
-                var tokenOptionOne = new JwtSecurityToken(
-                    issuer: "http://localhost:5000",
-                    audience: "http://localhost:5000",
-                    claims: claims,
-                    expires: DateTime.Now.AddMinutes(10),
-                    signingCredentials: signinCredentials
-                    );
-                string token = new JwtSecurityTokenHandler().WriteToken(tokenOptionOne);
+                string token = GenrateJWTToken(email);
                 msmq = new MsmqSender();
-                msmq.SendToMsmq(token,model.Email);
+                msmq.SendToMsmq(token, model.Email);
                 return "ForgotPasswordConformation";
-            }    
+            }
             return string.Empty;
+        }
+
+        private SqlCommand StoreProcedureConnection(string Name)
+        {
+            SqlCommand command = new SqlCommand(Name, connection);
+            command.CommandType = CommandType.StoredProcedure;
+            return command;
         }
 
         /// <summary>
@@ -194,24 +165,70 @@ namespace FundooRepository
         /// <returns></returns>
         public  string ResetPassword(ResetModel resetModel)
         {
-            var stream = resetModel.token;
-            var handler = new JwtSecurityTokenHandler();
-            var jsonToken = handler.ReadToken(stream);
-            var tokenS = handler.ReadToken(stream) as JwtSecurityToken;
-            var email = tokenS.Claims.FirstOrDefault(claim => claim.Type == "email").Value;
-            var provider = new SHA1CryptoServiceProvider();
-            var encoding = new UnicodeEncoding();
-            byte[] encrypt = provider.ComputeHash(encoding.GetBytes(resetModel.password));
-            String encrypted = Convert.ToBase64String(encrypt);
-            SqlCommand command = new SqlCommand("spUpdatePasswordByEmail", connection);
-            command.CommandType = CommandType.StoredProcedure;
+            string email = DecodeToken(resetModel);
+            string encrypted = EncryptPassword(resetModel.password);
+            SqlCommand command = StoreProcedureConnection("spUpdatePasswordByEmail");
             command.Parameters.AddWithValue("@Email", email);
             command.Parameters.AddWithValue("@Password", encrypted);
             connection.Open();
             SqlDataReader dataReader = command.ExecuteReader();
             connection.Close();
             return "updated";
+        }
 
+        /// <summary>
+        /// this is method encryptPassword
+        /// </summary>
+        /// <param name="Password"></param>
+        /// <returns></returns>
+        private static string EncryptPassword(string Password)
+        {
+            var provider = new SHA1CryptoServiceProvider();
+            var encoding = new UnicodeEncoding();
+            byte[] encrypt = provider.ComputeHash(encoding.GetBytes(Password));
+            String encrypted = Convert.ToBase64String(encrypt);
+            return encrypted;
+        }
+
+        /// <summary>
+        /// this is method for DecodeToken
+        /// </summary>
+        /// <param name="resetModel"></param>
+        /// <returns></returns>
+        private static string DecodeToken(ResetModel resetModel)
+        {
+            var stream = resetModel.token;
+            var handler = new JwtSecurityTokenHandler();
+            var jsonToken = handler.ReadToken(stream);
+            var tokenS = handler.ReadToken(stream) as JwtSecurityToken;
+            var email = tokenS.Claims.FirstOrDefault(claim => claim.Type == "email").Value;
+            return email;
+        }
+
+        /// <summary>
+        /// this is a method for GenrateJWTToken.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        private static string GenrateJWTToken(string email)
+        {
+            var secretkey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"));
+            var signinCredentials = new SigningCredentials(secretkey, SecurityAlgorithms.HmacSha256);
+
+            var claims = new List<Claim>
+                        {
+                            new Claim("email", email),
+                            new Claim(ClaimTypes.Role, "User")
+                        };
+            var tokenOptionOne = new JwtSecurityToken(
+                issuer: "http://localhost:5000",
+                audience: "http://localhost:5000",
+                claims: claims,
+                expires: DateTime.Now.AddMinutes(10),
+                signingCredentials: signinCredentials
+                );
+            string token = new JwtSecurityTokenHandler().WriteToken(tokenOptionOne);
+            return token;
         }
     }
 }
