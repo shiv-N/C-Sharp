@@ -62,7 +62,7 @@ namespace BusinessManager
                 string token = account.Login(model);
                 if (token != string.Empty)
                 {
-                    return "Login successful!!";
+                    return "Login successful!!\n"+"Token :"+token;
                 }
                 else
                 {

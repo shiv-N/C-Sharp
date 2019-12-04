@@ -54,12 +54,8 @@ namespace FundooRepository
                 }
                 else
                 {
-                    var provider = new SHA1CryptoServiceProvider();
-                    var encoding = new UnicodeEncoding();
-                    byte[] encrypt = provider.ComputeHash(encoding.GetBytes(model.Password));
-                    String encrypted = Convert.ToBase64String(encrypt);
-                    SqlCommand command = new SqlCommand("spInsertUser", connection);
-                    command.CommandType = CommandType.StoredProcedure;
+                    string encrypted = EncryptPassword(model.Password);
+                    SqlCommand command = StoreProcedureConnection("spInsertUser");
                     command.Parameters.AddWithValue("FirstName", model.FirstName);
                     command.Parameters.AddWithValue("LastName", model.LastName);
                     command.Parameters.AddWithValue("PhoneNumber", model.PhoneNumber);
@@ -94,7 +90,7 @@ namespace FundooRepository
         {
             try
             {
-                String encrypted = EncryptPassword(model.Password);
+                string encrypted = EncryptPassword(model.Password);
                 SqlCommand command = StoreProcedureConnection("spLogin");
                 command.Parameters.AddWithValue("@Email", model.Email);
                 command.Parameters.AddWithValue("@Password", encrypted);
@@ -146,7 +142,7 @@ namespace FundooRepository
                 string token = GenrateJWTToken(email);
                 msmq = new MsmqSender();
                 msmq.SendToMsmq(token, model.Email);
-                return "ForgotPasswordConformation";
+                return "ForgotPasswordConformation\n"+"token : "+token;
             }
             return string.Empty;
         }
