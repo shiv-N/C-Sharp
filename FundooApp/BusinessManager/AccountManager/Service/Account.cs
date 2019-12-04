@@ -3,7 +3,7 @@
 //    Copyright © 2019 Company
 // </copyright>
 // <creator name="Saurabh Navdkar"/>
-// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------*
 namespace BusinessManager
 {
     using BusinessManager.Interface;
