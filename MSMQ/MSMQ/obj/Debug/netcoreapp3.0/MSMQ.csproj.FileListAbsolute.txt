@@ -11,3 +11,8 @@ C:\Users\Admin\source\repos\Saurabh\week 6\MSMQ\MSMQ\bin\Debug\netcoreapp3.0\Exp
 C:\Users\Admin\source\repos\Saurabh\week 6\MSMQ\MSMQ\obj\Debug\netcoreapp3.0\MSMQ.csproj.CopyComplete
 C:\Users\Admin\source\repos\Saurabh\week 6\MSMQ\MSMQ\obj\Debug\netcoreapp3.0\MSMQ.dll
 C:\Users\Admin\source\repos\Saurabh\week 6\MSMQ\MSMQ\obj\Debug\netcoreapp3.0\MSMQ.pdb
+C:\Users\Admin\source\repos\Saurabh\week 6\MSMQ\MSMQ\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Admin\source\repos\Saurabh\week 6\MSMQ\MSMQ\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Admin\source\repos\Saurabh\week 6\MSMQ\MSMQ\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Admin\source\repos\Saurabh\week 6\MSMQ\MSMQ\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
+C:\Users\Admin\source\repos\Saurabh\week 6\MSMQ\MSMQ\bin\Debug\netcoreapp3.0\System.IdentityModel.Tokens.Jwt.dll
